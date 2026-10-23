@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Рандомайзер обеда</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h1>Рандомайзер</h1>
+                <p>Очередность на обед</p>
+            </div>
+        </div>
+
+        <button class="icon-button" id="settingsButton" title="Настройки">
+            ⚙
+        </button>
+
+    </header>
+
+
+    <!-- DATE -->
+    <section class="date-card">
+
+        <div>
+            <span class="date-label">Сегодня</span>
+            <strong id="currentDate">23 октября 2026</strong>
+        </div>
+
+        <div class="calendar-icon">
+            ◷
+        </div>
+
+    </section>
+
+
+    <!-- SCHEDULE -->
+    <main id="schedule"></main>
+
+
+    <!-- ACTIONS -->
+    <section class="actions">
+
+        <button class="generate-button" id="generateButton">
+            <span>⤨</span>
+            Перегенерировать
+        </button>
+
+        <button class="secondary-button" id="showHistoryButton">
+            История
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <span>Следующая ротация автоматически завтра</span>
+    </footer>
+
+</div>
+
+
+<!-- SETTINGS MODAL -->
+<div class="modal hidden" id="settingsModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <div>
+                <h2>Сотрудники</h2>
+                <p>Управление списком</p>
+            </div>
+
+            <button class="close-button" id="closeSettings">
+                ×
+            </button>
+        </div>
+
+
+        <div class="employee-list" id="employeeList"></div>
+
+
+        <div class="add-employee">
+
+            <input
+                type="text"
+                id="employeeName"
+                placeholder="Имя сотрудника"
+            >
+
+            <select id="employeeGender">
+                <option value="female">Девушка</option>
+                <option value="male">Парень</option>
+            </select>
+
+            <button id="addEmployeeButton">
+                Добавить
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HISTORY MODAL -->
+<div class="modal hidden" id="historyModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>История</h2>
+                <p>Предыдущие расписания</p>
+            </div>
+
+            <button class="close-button" id="closeHistory">
+                ×
+            </button>
+
+        </div>
+
+        <div id="historyList"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

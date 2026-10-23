@@ -1,0 +1,771 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f5f5f7;
+    --card: #ffffff;
+    --text: #202124;
+    --muted: #8b8d95;
+    --border: #e9e9ec;
+    --accent: #8f8be8;
+    --accent-light: #f0efff;
+    --dark: #292a30;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: 24px;
+}
+
+
+/* ============================= */
+/* APP */
+/* ============================= */
+
+.app {
+    width: 100%;
+    max-width: 1180px;
+    height: calc(100vh - 48px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header {
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--accent-light);
+    color: var(--accent);
+
+    font-size: 21px;
+}
+
+.brand h1 {
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+}
+
+.brand p {
+    margin-top: 3px;
+
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.2s;
+}
+
+.icon-button:hover {
+    background: #ebebee;
+}
+
+
+/* ============================= */
+/* DATE */
+/* ============================= */
+
+.date-card {
+    height: 58px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 10px 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    margin-bottom: 12px;
+}
+
+.date-label {
+    display: block;
+
+    font-size: 11px;
+
+    color: var(--muted);
+
+    margin-bottom: 2px;
+}
+
+.date-card strong {
+    font-size: 13px;
+}
+
+.calendar-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--accent-light);
+
+    color: var(--accent);
+
+    font-size: 18px;
+}
+
+
+/* ============================= */
+/* SCHEDULE */
+/* ============================= */
+
+#schedule {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    flex: 1;
+
+    min-height: 0;
+}
+
+
+/* ============================= */
+/* CARD */
+/* ============================= */
+
+.schedule-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule-header {
+    min-height: 78px;
+
+    padding: 14px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3f2ff,
+            #fafaff
+        );
+
+    flex-shrink: 0;
+}
+
+.time {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+.people-count {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+.group-badge {
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* ============================= */
+/* PEOPLE */
+/* ============================= */
+
+.people {
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    flex: 1;
+}
+
+.person {
+    height: 48px;
+
+    padding: 7px 10px;
+
+    background: #f8f8f9;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    transition: 0.2s;
+}
+
+.person:hover {
+    background: #f0efff;
+}
+
+.avatar {
+    width: 29px;
+    height: 29px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.avatar.male {
+    background: #e7eaff;
+
+    color: #6570d8;
+}
+
+.avatar.female {
+    background: #f2e9ff;
+
+    color: #9b72ca;
+}
+
+.kursant {
+    border: 1px solid #d9d5ff;
+
+    background: #f5f3ff;
+}
+
+
+/* ============================= */
+/* ACTIONS */
+/* ============================= */
+
+.actions {
+    height: 54px;
+
+    display: flex;
+
+    gap: 9px;
+
+    margin-top: 12px;
+
+    flex-shrink: 0;
+}
+
+.generate-button {
+    flex: 1;
+
+    border: none;
+
+    background: var(--dark);
+
+    color: white;
+
+    border-radius: 13px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.generate-button:hover {
+    background: #191a1f;
+
+    transform: translateY(-1px);
+}
+
+.generate-button span {
+    font-size: 18px;
+
+    margin-right: 6px;
+}
+
+.secondary-button {
+    width: 110px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    border-radius: 13px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.secondary-button:hover {
+    background: #eeeeef;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    height: 28px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* ============================= */
+/* MODALS */
+/* ============================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    width: 100%;
+
+    max-width: 480px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 22px;
+}
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+}
+
+.modal-header p {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-top: 4px;
+}
+
+.close-button {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f3f3f4;
+
+    cursor: pointer;
+
+    font-size: 22px;
+}
+
+
+/* ============================= */
+/* EMPLOYEES */
+/* ============================= */
+
+.employee-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+}
+
+.employee-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 11px 12px;
+
+    background: #f7f7f8;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+}
+
+.employee-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.gender-label {
+    font-size: 10px;
+
+    color: var(--muted);
+}
+
+.delete-employee {
+    border: none;
+
+    background: transparent;
+
+    color: #b5b5ba;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+/* ============================= */
+/* ADD EMPLOYEE */
+/* ============================= */
+
+.add-employee {
+    display: grid;
+
+    grid-template-columns: 1fr 110px;
+
+    gap: 8px;
+}
+
+.add-employee input,
+.add-employee select {
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 11px;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.add-employee input:focus,
+.add-employee select:focus {
+    border-color: var(--accent);
+}
+
+.add-employee button {
+    grid-column: span 2;
+
+    border: none;
+
+    background: var(--accent);
+
+    color: white;
+
+    border-radius: 11px;
+
+    padding: 11px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-weight: 600;
+}
+
+
+/* ============================= */
+/* HISTORY */
+/* ============================= */
+
+.history-item {
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    margin-bottom: 9px;
+}
+
+.history-date {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-bottom: 9px;
+}
+
+.history-time {
+    font-weight: 600;
+
+    font-size: 12px;
+
+    margin-top: 7px;
+}
+
+.history-names {
+    font-size: 11px;
+
+    color: var(--muted);
+
+    margin-top: 3px;
+
+    line-height: 1.5;
+}
+
+
+/* ============================= */
+/* НОУТБУКИ */
+/* ============================= */
+
+@media (max-height: 750px) {
+
+    body {
+        padding: 14px 20px;
+    }
+
+    .app {
+        height: calc(100vh - 28px);
+    }
+
+    .header {
+        height: 48px;
+    }
+
+    .brand-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .date-card {
+        height: 48px;
+    }
+
+    .schedule-header {
+        min-height: 65px;
+        padding: 10px 13px;
+    }
+
+    .person {
+        height: 40px;
+    }
+
+    .avatar {
+        width: 25px;
+        height: 25px;
+    }
+
+    .actions {
+        height: 46px;
+    }
+
+    footer {
+        height: 20px;
+    }
+}
+
+
+/* ============================= */
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+/* ============================= */
+
+@media (max-width: 800px) {
+
+    body {
+        overflow: auto;
+
+        padding: 20px 12px;
+    }
+
+    .app {
+        height: auto;
+    }
+
+    #schedule {
+        grid-template-columns: 1fr;
+    }
+
+    .people {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer {
+        height: 35px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .people {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        height: 48px;
+    }
+
+    .secondary-button {
+        width: 90px;
+    }
+
+    .add-employee {
+        grid-template-columns: 1fr;
+    }
+
+    .add-employee button {
+        grid-column: auto;
+    }
+}
